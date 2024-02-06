@@ -155,7 +155,6 @@ const cookieExtractor = (req) => {
   if (req && req.cookies) {
     req.logger.info("Cookies:", req.cookies);
     token = req.cookies["coderCookieToken"];
-    console.log("Token in cookie extractor:", token);
   }
 
   req.logger.info("Token Extracted:", token);

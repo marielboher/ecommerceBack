@@ -253,7 +253,6 @@ class ProductController {
         return;
       }
       const owner = await userModel.findById(product.owner);
-      console.log("owner", owner.role);
       if (owner && owner.role == "premium") {
         const mailOptions = {
           from: "tu-email@example.com",

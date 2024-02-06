@@ -32,7 +32,6 @@ router.get("/products", checkSession, async (req, res) => {
   const products = await PM.getProducts(req.query);
   const user = req.session.user;
 
-  console.log(user);
   res.render("products", { products, user });
 });
 
@@ -119,13 +118,11 @@ router.get("/failregister", async (req, res) => {
 
 router.get("/upload/:uid", (req, res) => {
   const userId = req.params.uid;
-  console.log("UserID:", userId);
   res.render("uploads", { userId });
 });
 
 router.get("/premium/:uid", (req, res) => {
   const userId = req.params.uid;
-  console.log("UserID:", userId);
   res.render("premium", { userId });
 });
 

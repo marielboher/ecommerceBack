@@ -55,7 +55,6 @@ class AuthController {
         secure: true,
         sameSite: "None",
       });
-      console.log("cookie en auth", userData.token);
 
       return res.status(200).json({
         status: "success",
@@ -161,15 +160,13 @@ class AuthController {
 
   async profile(req, res) {
     const userFound = await userModel.findById(req.user.id);
-
     if (!userFound) {
       res.status(404).send("user not found");
     }
     return res.status(200).json({
-      username: userFound.username,
       email: userFound.email,
-      firstName: userFound.firstName,
-      lastName: userFound.lastName,
+      firstName: userFound.first_name,
+      lastName: userFound.last_name,
       age: userFound.age,
       role: userFound.role,
       cart: userFound.cart,
@@ -179,25 +176,22 @@ class AuthController {
   async verifyToken(req, res) {
     const token = req.cookies.coderCookieToken;
 
-    console.log("coderCookieToken", token);
-
     if (!token) {
       return res.status(401).json({
-        message: "Unauthorized 1",
+        message: "Unauthorized",
       });
     }
 
     jwt.verify(token, ENV_CONFIG.jwtSecret, async (err, user) => {
-      console.log("error jwt", err);
       if (err) {
         return res.status(401).json({
-          message: "Unauthorized 2",
+          message: "Unauthorized",
         });
       }
       const userFound = await userModel.findById(user.id);
       if (!userFound) {
         return res.status(401).json({
-          message: "Unauthorized 3",
+          message: "Unauthorized",
         });
       }
       return res.status(200).json({

@@ -122,8 +122,6 @@ class CartController {
         return res.status(404).json({ error: "Carrito no encontrado" });
       }
 
-      console.log("Productos en el carrito:", cart.products);
-
       const productManager = new ProductManager();
       const failedProducts = [];
       const successfulProducts = [];

@@ -92,15 +92,14 @@ class CartManager {
           return false;
         }
 
-        console.log("PID:", pid);
-        console.log(
-          "Cart products:",
-          cart.products.map((item) =>
-            item.product._id
-              ? item.product._id.toString()
-              : item.product.toString()
-          )
-        );
+        // console.log(
+        //   "Cart products:",
+        //   cart.products.map((item) =>
+        //     item.product._id
+        //       ? item.product._id.toString()
+        //       : item.product.toString()
+        //   )
+        // );
 
         const product = cart.products.find(
           (item) =>
