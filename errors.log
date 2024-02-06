@@ -1,0 +1,61 @@
+warning: Prueba de log level warning!
+error: Invalid credentials
+error: Usuario no autenticado, procediendo...
+warning: Usuario no autenticado, procediendo...
+warning: Usuario no autenticado, procediendo...
+warning: Usuario no autenticado, procediendo...
+error: Error personalizado capturado: Error tratando de crear el usuario {"cause":"Una o más propiedades fueron enviadas incompletas o no son válidas.\n        Lista de propiedades requeridas:\n            * fist_name: type String, recibido: mariel\n            * last_name: type String, recibido: \n            * email: type String, recibido: \n            * age: type Number, recibido: \n            * password: type String, recibido: 22\n    ","code":400,"name":"User Creation Error","stack":"User Creation Error: Error tratando de crear el usuario\n    at UserController.register (file:///C:/Users/joaco/Desktop/maru/CoderHouse/Backend/desafio9/src/controllers/userController.js:18:29)\n    at Layer.handle [as handle_request] (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+warning: Usuario no autenticado, procediendo...
+error: Invalid credentials
+error: Error personalizado capturado: Invalid credentials {"cause":"Autenticación fallida para el usuario con correo electrónico: mariel@gmail.com","code":401,"name":"Authentication Error","stack":"Authentication Error: Invalid credentials\n    at AuthController.login (file:///C:/Users/joaco/Desktop/maru/CoderHouse/Backend/desafio9/src/controllers/authController.js:19:29)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+info: Servidor escuchando en puerto 8000
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: Servidor escuchando en puerto 8000
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: Servidor escuchando en puerto 8000
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: Servidor escuchando en puerto 8000
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: GET en /products - at 26/10/2023 - 15:01:05
+info: Session exists: {"age":26,"cart":"6536b975ab413a081eb73b97","email":"mariel@gmail.com","first_name":"mariel","id":"6536b975ab413a081eb73b9a","last_name":"boher","role":"user"}
+info: GET en /profile - at 26/10/2023 - 15:01:10
+info: Session exists: {"age":26,"cart":"6536b975ab413a081eb73b97","email":"mariel@gmail.com","first_name":"mariel","id":"6536b975ab413a081eb73b9a","last_name":"boher","role":"user"}
+info: POST en /api/sessions/logout - at 26/10/2023 - 15:01:11
+info: GET en /login - at 26/10/2023 - 15:01:12
+warning: Usuario no autenticado, procediendo...
+info: GET en /login - at 26/10/2023 - 15:01:15
+warning: Usuario no autenticado, procediendo...
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: POST en /api/sessions/login/ - at 26/10/2023 - 15:03:24
+info: User data retrieved: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzZiOTc1YWI0MTNhMDgxZWI3M2I5YSIsImVtYWlsIjoibWFyaWVsQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjk4MzQzNDA1LCJleHAiOjE2OTg0Mjk4MDV9.GZAkn8pnzNvkOcuUuT98uLXZAFxqvonABogd78fOWVE","user":{"__v":0,"_id":"6536b975ab413a081eb73b9a","age":26,"cart":"6536b975ab413a081eb73b97","email":"mariel@gmail.com","first_name":"mariel","last_name":"boher","password":"$2b$10$iy9FZmDVKw/Qa.5dOyYeledRD8IAT42ml64yDaCxTtJR5fVdC.r1m","role":"user"}}
+info: GET en /products - at 26/10/2023 - 15:03:25
+info: Session exists: {"age":26,"cart":"6536b975ab413a081eb73b97","email":"mariel@gmail.com","first_name":"mariel","id":"6536b975ab413a081eb73b9a","last_name":"boher","role":"user"}
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+info: Servidor escuchando en puerto 8000
+info: Conectado a MongoDB
+warning: Usuario no autenticado, procediendo...
+warning: Usuario no autenticado, procediendo...
+error: Invalid credentials
+error: Error personalizado capturado: Invalid credentials {"cause":"Autenticación fallida para el usuario con correo electrónico: mariel@gmail.com","code":401,"name":"Authentication Error","stack":"Authentication Error: Invalid credentials\n    at AuthController.login (file:///C:/Users/joaco/Desktop/maru/CoderHouse/Backend/desafio9/src/controllers/authController.js:19:29)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+warning: Usuario no autenticado, procediendo...
+error: Error personalizado capturado: Error tratando de crear el usuario {"cause":"Una o más propiedades fueron enviadas incompletas o no son válidas.\n        Lista de propiedades requeridas:\n            * fist_name: type String, recibido: mariel\n            * last_name: type String, recibido: \n            * email: type String, recibido: \n            * age: type Number, recibido: 26\n            * password: type String, recibido: \n    ","code":400,"name":"User Creation Error","stack":"User Creation Error: Error tratando de crear el usuario\n    at UserController.register (file:///C:/Users/joaco/Desktop/maru/CoderHouse/Backend/desafio9/src/controllers/userController.js:18:29)\n    at Layer.handle [as handle_request] (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\joaco\\Desktop\\maru\\CoderHouse\\Backend\\desafio9\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+fatal: Fatal error!
+fatal: Fatal error!
+warning: Warning!
+http: Trace!

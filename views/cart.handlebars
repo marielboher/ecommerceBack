@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/public/css/products.css" />
+    <title>Document</title>
+    <script src="../src/public/cart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <div class="nav-products">
+      <p class="info-off">30% off site wide and free shipping with promo code:
+        SUMMERSALE</p>
+      <h1 class="title-home">SONS</h1>
+      <div class="container-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/realtimeproducts">realtimeproducts</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="container-carts">
+      <h1>Carrito</h1>
+      <div class="product-cart">
+        <ul>
+          {{#each products}}
+            <li>
+              {{this.product.title}}
+              - ${{this.product.price}}
+              - Cantidad:
+              {{this.quantity}}
+               <button class="btn-delete-cart" onclick="eliminarProductoDelCarrito('{{this.product._id}}')">Eliminar</button>
+            </li>
+          {{/each}}
+        </ul>
+        <button onclick="realizarCompra()" id='checkout-button'>Realizar Compra</button>
+      </div>
+    </div>
+  </body>
+</html>

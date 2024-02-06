@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/public/css/style.css" />
+    <title>Panel de Administración de Usuarios</title>
+</head>
+<body>
+    <h1>Panel de Administración de Usuarios</h1>
+    <ul id="userList" class="admin-user-list">
+      {{#each users}}
+      <li id="user-{{this._id}}" class="user">
+        <span>Usuario: {{this.first_name}} {{this.last_name}}</span>
+        <span>Email: {{this.email}}</span>
+        <span>Rol: {{this.role}}</span>
+        <button class="delete-button" data-id="{{this._id}}">Eliminar</button>
+        <select class="role-select" data-id="{{this._id}}">
+          <option value="user">Usuario</option>
+          <option value="admin">Admin</option>
+          <option value="premium">Premium</option>
+        </select>
+        <button class="role-change-button" data-id="{{this._id}}">Cambiar rol</button>
+      </li>
+      {{/each}}
+    </ul>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.delete-button').forEach(button => {
+          button.addEventListener('click', function() {
+            const userId = this.getAttribute('data-id');
+            fetch(`/api/users/${userId}`, { method: 'DELETE' })
+              .then(response => response.json())
+              .then(data => {
+                if(data.success) {
+                  document.getElementById(`user-${userId}`).remove();
+                } else {
+                  alert('Error al eliminar el usuario');
+                }
+              });
+          });
+        });
+
+        document.querySelectorAll('.role-change-button').forEach(button => {
+          button.addEventListener('click', function() {
+            const userId = this.getAttribute('data-id');
+            const select = document.querySelector(`.role-select[data-id="${userId}"]`);
+            const newRole = select.value;
+            fetch(`/api/users/${userId}/role`, { 
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ role: newRole }),
+            })
+            .then(response => response.json())
+            .then(data => {
+              if(data.success) {
+                alert('Rol actualizado correctamente');
+              } else {
+                alert('Error al actualizar el rol');
+              }
+            });
+          });
+        });
+      });
+    </script>
+</body>
+</html>

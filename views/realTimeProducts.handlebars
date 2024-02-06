@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/public/css/style.css">
+</head>
+
+<body>
+  <div class="nav-products">
+    <p class="info-off">30% off site wide and free shipping with promo code:
+      SUMMERSALE</p>
+    <div class="container-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/realtimeproducts">realtimeproducts</a></li>
+
+        <li><button id="cartButton">CART</button></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="formulario">
+      <form id="productForm"  class="productForm">
+        <input type="text" id="title" name="title" placeholder="Título" required>
+        <input type="text" id="description" name="description" placeholder="Descripción" required>
+        <input type="number" id="code" name="code" placeholder="Código" required>
+        <input type="number" id="price" name="price" placeholder="Precio" required>
+        <input type="number" id="stock" name="stock" placeholder="Stock" required>
+        <input type="text" id="category" name="category" placeholder="Categoría" required>
+
+        </select>
+        <input type="text" id="thumbnails" name="thumbnails" placeholder="URL de la imagen" required>
+        <input type="hidden" id="productId" name="productId">
+        <button type="submit" id="submitButton">Agregar Producto</button>
+      </form>
+
+    </div>
+    <ul id="productList" class="realtime-products">
+      {{#each products}}
+      <li id="product-{{this._id}}" class="product">
+        <img src={{this.thumbnails}} alt={{this.title}}>
+        <span>Producto: {{this.title}} - Stock: {{this.stock}} - Descripción: {{this.description}}</span>
+        <button class="delete-button" data-id="{{this._id}}">Eliminar</button>
+        <button class="edit-button" data-id="{{this._id}}">Editar</button>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/src/public/realTimeProducts.js"></script>
+  <script src="/src/public/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/public/css/products.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container-login">
+      <div class="login">
+        <h1>Restore password</h1>
+        <form class="form_main" action="/api/sessions/restore-password" method="post">
+          <div class="login-form">
+            <label class="form-label"></label>
+            <div class="inputContainer">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+          </div>
+          <div class="login-form">
+            <label class="form-label"></label>
+          </div>
+          <button type="submit" class="btn-login" id="btnLogIn">Restore</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
