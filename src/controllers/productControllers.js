@@ -62,7 +62,31 @@ class ProductController {
       next(error);
     }
   }
-
+  async getCategories(req, res) {
+    try {
+      const categories = await this.productService.getCategories();
+      res.json({
+        status: "success",
+        categories,
+      });
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+      res.status(500).send({ status: "error", message: "Error fetching categories." });
+    }
+  }
+  async getProductsByCategory(req, res) {
+    try {
+      const category = req.params.category;
+      const products = await this.productService.getProductsByCategory(category);
+      res.json({
+        status: "success",
+        data: products,
+      });
+    } catch (error) {
+      console.error("Error fetching products by category:", error);
+      res.status(500).send({ status: "error", message: "Error fetching products by category." });
+    }
+  }
   async addProduct(req, res) {
     let {
       title,

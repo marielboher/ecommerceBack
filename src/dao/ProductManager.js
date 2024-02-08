@@ -148,6 +148,34 @@ class ProductManager {
     }
   }
   
+  async getCategories() {
+    try {
+      const categories = await productModel.aggregate([
+        {
+          $group: {
+            _id: "$category", 
+          }
+        },
+        {
+          $sort: { _id: 1 } 
+        }
+      ]);
+  
+      return categories.map(category => category._id);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+      return [];
+    }
+  }
+  async getProductsByCategory(category) {
+    try {
+      const products = await productModel.find({ category: category }).lean();
+      return products;
+    } catch (error) {
+      console.error("Error fetching products by category:", error);
+      return [];
+    }
+  }
 }
 
 export default ProductManager;

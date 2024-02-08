@@ -18,6 +18,13 @@ class ProductService {
     return await this.productManager.getProducts(params);
   }
 
+  async getCategories(categories) {
+    return await this.productManager.getCategories(categories);
+  }
+
+  async getProductsByCategory(category) {
+    return await this.productManager.getProductsByCategory(category);
+  }
   async getProductById(id) {
     return await this.productManager.getProductById(id);
   }

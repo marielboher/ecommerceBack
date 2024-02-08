@@ -11,9 +11,18 @@ const productService = new ProductService();
 
 productsRouter.get("/", productController.getProducts.bind(productController));
 productsRouter.get(
+  "/categories",
+  productController.getCategories.bind(productController)
+);
+productsRouter.get(
   "/:pid",
   productController.getProductById.bind(productController)
 );
+productsRouter.get(
+  "/categories/:category",
+  productController.getProductsByCategory.bind(productController)
+);
+
 productsRouter.post(
   "/",
   passportCall("jwt"),
